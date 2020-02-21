@@ -22,7 +22,7 @@
     "start:prod": "node lib/bin/www",
     "clean": "rimraf lib",
     "lint": "tslint --force --format verbose \"src/**/*.ts\" \"test/*\"",
-    "build": "npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc -p ./tsconfig.build.json --pretty",
+    "build": "ts-node src/bin/www.ts",
     "build:prod": "npm run clean && echo Using TypeScript && tsc --version && tsc -p ./tsconfig.build.json --pretty",
     "test": "mocha --compilers ts:ts-node/register --recursive \"test/**/*.spec.ts\"",
     "coverage": "nyc npm run test",
